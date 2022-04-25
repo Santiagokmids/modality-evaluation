@@ -1,4 +1,4 @@
-import Header from "../../components/Header";
+import Header from "../components/Header";
 
 let person = {
     name: "",
@@ -30,20 +30,7 @@ let handleSubmit = async e => {
         body: JSON.stringify(person)
     }
 
-    let response = await fetch("http://localhost:3000/api/insertIntoDatabase", object);
-
-}
-
-let handleClick = async e => {
-
-    person.name = "Jaun";
-
-    let object = {
-        method: 'POST',
-        body: JSON.stringify(person)
-    }
-
-    let response = await fetch("http://localhost:3000/api/insertIntoDatabase", object);
+    await fetch("http://localhost:3000/api/student/insertIntoDatabase", object)
 }
 
 export default function loginRegister() {
@@ -66,7 +53,7 @@ export default function loginRegister() {
                     </div>
 
                     <div className="form-group p-2">
-                        <button type="submit" > Ingresar </button> <button onClick={handleClick}> Registrarse </button>
+                        <button id="login" type="submit" > Ingresar </button> <button type="submit" id="register"> Registrarse </button>
                     </div>
 
                 </form>
