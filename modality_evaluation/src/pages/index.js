@@ -41,10 +41,10 @@ let handleSubmit = async e => {
     const result = await r.json();
 
     if (result.type == 1) {
-        window.location.href = "http://localhost:3000/createTest"
+        window.location.href = "http://localhost:3000/front/createTest"
 
     } else if (result.type == 2) {
-        window.location.href = "http://localhost:3000/test"
+        window.location.href = "http://localhost:3000/front/test"
         
     } else {
         window.alert("No se encuentra registrado en la base de datos. Registrese!");
@@ -77,7 +77,7 @@ export default function loginRegister() {
                 </form>
             </card>
             <div style={{ textAlign: "center" }}>
-                <a href="http://localhost:3000/register">
+                <a href="http://localhost:3000/front/register">
                     <button>Registrarse</button>
                 </a>
             </div>

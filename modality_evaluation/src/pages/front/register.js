@@ -1,5 +1,5 @@
-import Header from "../components/Header";
-import styles from "../styles/Home.module.css";
+import Header from "../../components/Header";
+import styles from "../../styles/Home.module.css";
 
 let state = {
     name: "",
@@ -54,7 +54,7 @@ let handleSubmit = async e => {
 
     } else {
         window.alert("Las contraseñas que ingresó no coinciden");
-        e.href("http://localhost:3000/register")
+        e.href("http://localhost:3000/front/register")
     }
 
 }
