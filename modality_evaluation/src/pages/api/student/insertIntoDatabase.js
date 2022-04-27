@@ -9,6 +9,7 @@ export default async function handler(req, res) {
             password: body.password,
             type: body.type
         });
+        res.status(200);
         console.log(body);
     } else {
         res.status(400);

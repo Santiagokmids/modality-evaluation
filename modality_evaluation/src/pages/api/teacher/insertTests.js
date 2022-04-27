@@ -10,6 +10,7 @@ export default async function insertTests(req, res) {
             id: body.id,
             access: body.access
         });
+        res.status(200);
         console.log(body);
     } else {
         res.status(400);

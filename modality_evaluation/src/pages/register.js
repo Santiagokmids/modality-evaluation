@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import styles from "../styles/Home.module.css";
 
 let person = {
     name: "",
@@ -37,8 +38,8 @@ export default function loginRegister() {
     return (
         <div>
             <Header title="Login and Register"> </Header>
-            <h1 className="text-center"> Ingresa o registrate al módulo de exámenes </h1>
-            <card className="card w-50 m-auto mt-5" onSubmit={handleSubmit}>
+            <h1 className={styles.hola}> Ingresa o registrate al módulo de exámenes </h1>
+            <card className={styles.cardd} onSubmit={handleSubmit}>
                 <form className="form">
                     <div className="form-group p-2" onChange={handleChange}>
                         <input className="form-control" type="text" placeholder="Nombre completo" name="name" required />
