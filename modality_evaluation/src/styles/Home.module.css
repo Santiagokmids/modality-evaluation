@@ -122,3 +122,42 @@
 .cardd{
   background-color: brown;
 }
+
+.mainContainer {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionCard {
+  width: 800px;
+  height: 550px;
+  background-color: #ffffff;
+  border-radius: 23px;
+  box-shadow: black 7px 8px 10px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form {
+  background-color: #0000ff00;
+  margin: 10px;
+  color: black;
+  border-width: 0px;
+  width: 600px;
+  border-bottom: 2px solid black;
+  border-style: solid;
+  margin-bottom: 22px;
+}
+
+.form:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+.form::placeholder {
+  color: black;
+}
+

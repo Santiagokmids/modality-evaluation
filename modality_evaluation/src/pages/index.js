@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import styles from "../styles/Home.module.css";
 
-let person = {
+let state = {
     name: "",
     password: "",
     type: 0
@@ -11,15 +11,15 @@ let handleChange = e => {
 
     switch (e.target.name) {
         case "name":
-            person.name = e.target.value
+            state.name = e.target.value
             break;
 
         case "password":
-            person.password = e.target.value
+            state.password = e.target.value
             break;
 
         case "profesion":
-            person.type = e.target.value
+            state.type = e.target.value
             break;
     }
 }
@@ -28,7 +28,7 @@ let handleSubmit = async e => {
 
     let object = {
         method: 'POST',
-        body: JSON.stringify(person)
+        body: JSON.stringify(state)
     }
 
     await fetch("http://localhost:3000/api/student/insertIntoDatabase", object)
