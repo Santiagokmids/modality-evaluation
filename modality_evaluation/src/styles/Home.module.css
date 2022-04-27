@@ -56,6 +56,15 @@
   font-size: 1.5rem;
 }
 
+.codeTest{
+  width: 100px;
+  margin-left:  10px;
+}
+
+.codeTest::placeholder{
+  text-align: center;
+}
+
 .code {
   background: #fafafa;
   border-radius: 5px;
