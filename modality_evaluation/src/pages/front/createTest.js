@@ -30,12 +30,25 @@ let handleChange = e => {
 
 let handleSubmit = async e => {
 
+    e.preventDefault();
     let object = {
         method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify(test)
     }
 
-    await fetch("http://localhost:3000/api/teacher/insertTests", object)
+    let r = await fetch("http://localhost:3000/api/teacher/insertTests", object)
+
+    const result = await r.json();
+
+    if(result.date === "check"){
+        window.alert("Se ha creado correctamente el examen");
+        window.location.href = "http://localhost:3000/front/createQuestion"
+    }
+   
 }
 
 export default function createTest() {
@@ -67,9 +80,6 @@ export default function createTest() {
                 </form>
             </card>
             <br/>
-            <div style={{textAlign: "center"}}>
-                <button> Añadir pregunta </button> 
-            </div><br/>
             <div style={{textAlign: "center"}}>
                 <a href="http://localhost:3000">
                     <button> Cancelar</button>

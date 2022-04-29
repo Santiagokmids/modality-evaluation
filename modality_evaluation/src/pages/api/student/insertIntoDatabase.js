@@ -6,16 +6,16 @@ export default async function handler(req, res) {
     console.log(body);
 
     if (method === "POST") {
-        database.push({
-            name: body.name,
-            password: body.password,
-            type: body.type
-        });
 
-        res.status(200).json({date : "check"});
+        try {
+            let response = await database.query("INSERT INTO PERSON VALUES ($1,$2,$3)", [body.name, body.password, body.type]);
+            res.status(200).json({ date: "check" });
 
+        } catch (error) {
+            res.status(400).json({ date: "fail" });
+        }
     } else {
-        res.status(400).json({date : "fail"});
+        res.status(400).json({ date: "fail" });
     }
 
 }

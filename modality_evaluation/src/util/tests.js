@@ -1,17 +1,15 @@
-let database = [
-    {
-        title: "Discretas",
-        description: "Este es el tercer examen de matemáticas discretas",
-        id: "12521",
-        access: 205
-    },
+import { Pool } from "pg/lib";
 
-    {
-        title: "Proyecto integrador",
-        description: "Este es el primer examen de proyecto integrador",
-        id: "123456",
-        access: 112
-    }
-];
+var conn;
 
-export default database;
+if (!conn){
+    conn = new Pool({
+        host: "localhost",
+        user: "postgres",
+        password: "sebas0212",
+        database: "Tests",
+        port: "5432"
+    })
+}
+
+export default conn;

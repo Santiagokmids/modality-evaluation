@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "create-next-app": "^12.1.5"
+    "create-next-app": "^12.1.5",
+    "pg": "^8.7.3"
   }
 }
