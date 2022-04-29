@@ -2,28 +2,27 @@ import database from "../../../util/database.js";
 
 export default async function handler(req, res) {
     const { method, body } = req;
-    var verify = false;
 
-    for (var i = 0; i < database.length && !verify; i++) {
-        if (database[i].name === body.name && database[i].password === body.password && database[i].type == body.type) {
-            verify = true;
-        }
-    }
+    if (method === "POST") {
 
-    if (method === "POST" && verify) {
-        console.log(body);
+        let response = await database.query("SELECT * FROM PERSON WHERE(NAME = $1 AND PASSWORD = $2)", [body.name, body.password]);
 
-        if (body.type == 1) {
-            res.status(200).json({type : 1});
-            console.log("entro")
+        if (response.rows.length > 0) {
 
-        } else if (body.type == 2) {
-            res.status(200).json({type : 2});
-            console.log("entro2");
+            if (body.type == 1) {
+                res.status(200).json({ type: 1 });
+                console.log("entro")
+
+            } else if (body.type == 2) {
+                res.status(200).json({ type: 2 });
+                console.log("entro2");
+            }
+        } else {
+            res.status(400).json({ type: 0 });
         }
 
     } else {
-        res.status(400).json({type : 0});
+        res.status(400).json({ type: 0 });
     }
 
 }
