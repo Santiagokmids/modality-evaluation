@@ -79,12 +79,12 @@ export default function loginRegister() {
                     </div>
 
                    
-                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group" onChange={handleChange}>
-                        <input type="radio" class="btn-check" name="profesion" id="btnradio1" value="1" autocomplete="off" />
-                        <label class="btn btn-outline-primary" for="btnradio1">Profesor</label>
+                    <div className="btn-group" role="group" aria-label="Basic radio toggle button group" onChange={handleChange}>
+                        <input type="radio" className="btn-check" name="profesion" id="btnradio1" value="1" autocomplete="off" />
+                        <label className="btn btn-outline-primary" for="btnradio1">Profesor</label>
 
-                        <input type="radio" class="btn-check" name="profesion" id="btnradio3" value="2" autocomplete="off" />
-                        <label class="btn btn-outline-primary" for="btnradio3">Estudiante</label>
+                        <input type="radio" className="btn-check" name="profesion" id="btnradio3" value="2" autocomplete="off" />
+                        <label className="btn btn-outline-primary" for="btnradio3">Estudiante</label>
                     </div>
                     
 

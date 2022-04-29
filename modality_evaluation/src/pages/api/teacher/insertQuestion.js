@@ -16,8 +16,8 @@ export default async function handlerInsert(req, res) {
             correctAsnwer: body.correctAsnwer
         });
         
-        res.status(200);
+        res.status(200).json({ date: "check"});
     }else {
-        res.status(404);
+        res.status(404).json({ date: "fail"});
     }
 }
