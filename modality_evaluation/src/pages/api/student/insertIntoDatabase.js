@@ -9,10 +9,11 @@ export default async function handler(req, res) {
             password: body.password,
             type: body.type
         });
-        res.status(200);
-        console.log(body);
+
+        res.status(200).json({date : "check"});
+
     } else {
-        res.status(400);
+        res.status(400).json({date : "fail"});
     }
 
 }

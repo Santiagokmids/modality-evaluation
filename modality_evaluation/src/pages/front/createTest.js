@@ -71,7 +71,7 @@ export default function createTest() {
                 <button> Añadir pregunta </button> 
             </div><br/>
             <div style={{textAlign: "center"}}>
-                <a href="http://localhost:3000/loginRegister">
+                <a href="http://localhost:3000">
                     <button> Cancelar</button>
                 </a>
             </div>
