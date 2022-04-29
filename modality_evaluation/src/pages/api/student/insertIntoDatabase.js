@@ -3,6 +3,8 @@ import database from "../../../util/database.js";
 export default async function handler(req, res) {
     const { method, body } = req;
 
+    console.log(body);
+
     if (method === "POST") {
 
         try {

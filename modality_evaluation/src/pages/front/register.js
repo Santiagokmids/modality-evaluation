@@ -78,9 +78,15 @@ export default function loginRegister() {
                         <input className="form-control" type="password" placeholder="Repetir Contraseña" name="password2" required />
                     </div>
 
-                    <div className="form-group p-2" onChange={handleChange}>
-                        <input type="radio" name="profesion" value="1" /> Profesor <input type="radio" name="profesion" value="2" />Estudiante <br />
+                   
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group" onChange={handleChange}>
+                        <input type="radio" class="btn-check" name="profesion" id="btnradio1" value="1" autocomplete="off" />
+                        <label class="btn btn-outline-primary" for="btnradio1">Profesor</label>
+
+                        <input type="radio" class="btn-check" name="profesion" id="btnradio3" value="2" autocomplete="off" />
+                        <label class="btn btn-outline-primary" for="btnradio3">Estudiante</label>
                     </div>
+                    
 
                     <div className="form-group p-2">
                         <button type="submit" > Registrarse </button>
