@@ -43,13 +43,13 @@ let handleSubmit = async e => {
             body: JSON.stringify(state)
         }
 
-        let r = await fetch("http://localhost:3000/api/student/insertIntoDatabase", object)
+        let r = await fetch("http://localhost:3000/api/student/insertIntoDatabase", object);
 
         const result = await r.json();
 
         if(result.date === "check"){
-            window.alert("Se ha registrado correctamente!")
-            window.location.href = "http://localhost:3000"
+            window.alert("Se ha registrado correctamente!");
+            window.location.href = "http://localhost:3000";
         }
 
     } else {

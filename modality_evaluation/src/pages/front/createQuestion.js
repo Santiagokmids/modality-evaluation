@@ -164,7 +164,7 @@ let handleSubmit = async e => {
 export default function questionForm(req, res) {
     return (
         <div>
-            <Header title="Create question"> </Header>
+            <Header title="Crear preguntas"></Header>
             <section className={styles.mainContainer} onSubmit={handleSubmit}>
                 <section className={styles.sectionCard}>
                     <form className="form">
@@ -367,7 +367,6 @@ export default function questionForm(req, res) {
                     </form>
                 </section>
             </section>
-
         </div>
     );
 }
