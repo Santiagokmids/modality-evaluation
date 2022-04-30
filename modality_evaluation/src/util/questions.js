@@ -1,3 +1,15 @@
-let database = [];
+import { Pool } from "pg/lib";
 
-export default database;
+var conn;
+
+if (!conn){
+    conn = new Pool({
+        host: "localhost",
+        user: "postgres",
+        password: "sebas0212",
+        database: "questions",
+        port: "5432"
+    })
+}
+
+export default conn;
