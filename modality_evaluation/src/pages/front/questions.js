@@ -2,10 +2,13 @@ import Header from '../../components/Header';
 import styles from "../../styles/Home.module.css";
 
 let state = {
-    name: "",
-    results: "",
-    type: 0
-}
+    id: 0,
+    answer1: "",
+    answer2: "",
+    answer3: "",
+    answer4: "",
+    answer5: ""
+};
 
 let handleSubmit = async e => {
 
@@ -17,5 +20,7 @@ let handleSubmit = async e => {
         },
         body: JSON.stringify(state)
     }
-    await fetch("http://localhost:3000/api/teacher/insertTests", object)
+    let r = await fetch("http://localhost:3000/api/student/calculateResult", object)
+
+    const result = await r.json();
 }
