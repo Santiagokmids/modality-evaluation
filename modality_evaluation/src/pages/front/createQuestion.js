@@ -154,12 +154,14 @@ let handleSubmit = async e => {
     if (result.date === "check") {
         window.alert("Se ha registrado correctamente las preguntas del examen!");
         window.location.href = "http://localhost:3000/front/test"
-    } else {
+
+    } else if (result.date === "not found") {
+        window.alert("No se ha encontrado un examen con el ID que proporcionó");
+    }
+    else if(result.date === "fail"){
         window.alert("Ooh! algo salió mal");
     }
-
 }
-
 
 export default function questionForm(req, res) {
     return (

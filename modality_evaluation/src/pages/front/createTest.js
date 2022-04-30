@@ -47,6 +47,9 @@ let handleSubmit = async e => {
     if(result.date === "check"){
         window.alert("Se ha creado correctamente el examen");
         window.location.href = "http://localhost:3000/front/createQuestion"
+
+    } else if(result.date === "found"){
+        window.alert("Ya existe un examen con ese código de identificación");
     }
    
 }
