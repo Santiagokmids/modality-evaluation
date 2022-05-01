@@ -49,8 +49,8 @@ export default class Form extends Component {
 
     render() {
         return (
-           <div className={styles.mainContainer}>
-               <div className="card" style={{width: "30rem", height: "30rem", marginTop: "195px"}}>
+            <div className={styles.mainContainer}>
+                <div className="card" style={{ width: "30rem", height: "30rem", marginTop: "195px" }}>
                     <div className="card-body">
                         <h5 className="card-title">Registrate al módulo de exámenes</h5>
                         <form onSubmit={this.handleSubmit} onChange={this.handleChange}>
@@ -70,9 +70,12 @@ export default class Form extends Component {
                             <label htmlFor="exampleInputPassword1" className="form-label">Yo soy un...</label>
                             <br></br>
                             <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                <input type="radio" className="btn-check" name="profesion" id="btnradio1" defaultValue={1} autoComplete="off" />
+                                <input type="radio" className="btn-check" name="profesion" id="btnradio1" value={1}/>
+
                                 <label className="btn btn-outline-primary" htmlFor="btnradio1">Profesor</label>
-                                <input type="radio" className="btn-check" name="profesion" id="btnradio3" defaultValue={2} autoComplete="off" />
+
+                                <input type="radio" className="btn-check" name="profesion" id="btnradio3" value={2} />
+                                
                                 <label className="btn btn-outline-primary" htmlFor="btnradio3">Estudiante</label>
                             </div>
 
@@ -86,7 +89,7 @@ export default class Form extends Component {
                         </a>
                     </div>
                 </div>
-           </div>
+            </div>
         );
     }
 }

@@ -11,11 +11,9 @@ export default async function handler(req, res) {
 
             if (body.type == 1) {
                 res.status(200).json({ type: 1 });
-                console.log("entro")
 
             } else if (body.type == 2) {
                 res.status(200).json({ type: 2 });
-                console.log("entro2");
             }
         } else {
             res.status(400).json({ type: 0 });
