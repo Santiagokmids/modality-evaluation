@@ -4,32 +4,75 @@ import styles from '../../../styles/Home.module.css';
 let router = "";
 let number = "1";
 
+let state = {
+    question: number,
+    answer: ""
+}
+
+let handleChange = async e => {
+
+    if (e.target.name === "answer1") {
+        state.answer = e.target.value;
+
+    } else {
+        state.question = number;
+    }
+
+}
+
+let handleSubmit = async e => {
+
+    e.preventDefault();
+    let object = {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(state)
+    }
+
+    let r = await fetch("http://localhost:3000/api/student/saveAnswers", object);
+
+    const result = await r.json();
+
+    if (result.date === "check") {
+        window.alert("Respuesta guardada de forma correcta")
+    }
+}
+
 export default function test({ title }) {
 
     return (
         <div>
             <Header title="Examen"></Header>
-            <div className={styles.mainContainer}>
-                <div className="card" style={{ width: "1000px", height: "500px" }}>
-                    <div className="card-body">
-                        <h5 className="card-title"> {title.question} </h5>
-                        <p className="card-text"> Seleccione una opción </p>
-                        <input type="radio" name="answer1" value="A" /> {title.answer1} <br />
-                        <input type="radio" name="answer1" value="B" /> {title.answer2} <br />
-                        <input type="radio" name="answer1" value="C" /> {title.answer3} <br />
-                        <input type="radio" name="answer1" value="D" /> {title.answer4} <br />
+            <div className={styles.mainContainer} onSubmit={handleSubmit} onChange={handleChange}>
+                <form className='form'>
+                    <div className="card" style={{ width: "1000px", height: "500px" }}>
+                        <div className="card-body">
+                            <h5 className="card-title"> {title.question} </h5>
+                            <p className="card-text"> Seleccione una opción </p>
+                            <input type="radio" name="answer1" value="A" /> {title.answer1} <br />
+                            <input type="radio" name="answer1" value="B" /> {title.answer2} <br />
+                            <input type="radio" name="answer1" value="C" /> {title.answer3} <br />
+                            <input type="radio" name="answer1" value="D" /> {title.answer4} <br />
+                        </div>
                     </div>
-                </div>
+                    <div style={{ textAlign: "center" }}>
+                        <button type='submit' className="btn btn-primary" style={{ marginTop: "30px", marginLeft: "10px" }}> Guardar respuesta y continuar </button>
+                    </div><br />
+                </form>
             </div>
-            <div className={styles.pagination}>
-                <nav aria-label="Page navigation example">
-                    <ul className="pagination">
+
+            <div className={styles.pagination} >
+                <nav aria-label="Page navigation example" >
+                    <ul className="pagination" >
                         <li className="page-item">
                             <a className="page-link" href="#" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
-                        <li className="page-item">
+                        <li className="page-item" >
                             <a className="page-link" href={router + "-1"}>
                                 <button type='submit' className='page-link' style={{ background: "none", color: "inherit", border: "none" }} > 1 </button>
                             </a>
@@ -62,6 +105,7 @@ export default function test({ title }) {
                     </ul>
                 </nav>
             </div>
+
         </div>
     );
 }
@@ -86,7 +130,7 @@ test.getInitialProps = async ({ asPath }) => {
         }
     }
 
-    let state = {
+    let current = {
         num: number,
     };
 
@@ -96,7 +140,7 @@ test.getInitialProps = async ({ asPath }) => {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(state)
+        body: JSON.stringify(current)
     }
 
     if (!verify) {

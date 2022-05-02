@@ -66,9 +66,18 @@ export default class Form extends Component {
                             <label htmlFor="exampleInputPassword1" className="form-label">Yo soy un...</label>
                             <br></br>
                             <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
+<<<<<<< HEAD
                                 <input type="radio" className="btn-check" name="type" id="btnradio1" defaultValue={1} autoComplete="off" />
                                 <label className="btn btn-outline-primary" htmlFor="btnradio1">Profesor</label>
                                 <input type="radio" className="btn-check" name="type" id="btnradio3" defaultValue={2} autoComplete="off" />
+=======
+                                <input type="radio" className="btn-check" name="type" id="btnradio1" value={1} />
+
+                                <label className="btn btn-outline-primary" htmlFor="btnradio1">Profesor</label>
+
+                                <input type="radio" className="btn-check" name="type" id="btnradio3" value={2} />
+                                
+>>>>>>> abd6d8b2af5c264a29edd1a03d2e691214be46c0
                                 <label className="btn btn-outline-primary" htmlFor="btnradio3">Estudiante</label>
                             </div>
 
