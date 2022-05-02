@@ -10,7 +10,7 @@ export default async function handler(req, res) {
         if (response.rows.length > 0) {
 
             if (body.type == 1) {
-                res.status(200).json({ type: 1 });
+                res.status(200).json({ name: body.name ,type: 1 });
                 console.log("entro")
 
             } else if (body.type == 2) {

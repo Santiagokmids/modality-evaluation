@@ -28,8 +28,10 @@ export default class Form extends Component {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(state)
+                body: JSON.stringify(this.state)
             }
+
+            console.log(this.state);
 
             let r = await fetch("http://localhost:3000/api/student/insertIntoDatabase", object);
 
@@ -70,9 +72,9 @@ export default class Form extends Component {
                             <label htmlFor="exampleInputPassword1" className="form-label">Yo soy un...</label>
                             <br></br>
                             <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                <input type="radio" className="btn-check" name="profesion" id="btnradio1" defaultValue={1} autoComplete="off" />
+                                <input type="radio" className="btn-check" name="type" id="btnradio1" defaultValue={1} autoComplete="off" />
                                 <label className="btn btn-outline-primary" htmlFor="btnradio1">Profesor</label>
-                                <input type="radio" className="btn-check" name="profesion" id="btnradio3" defaultValue={2} autoComplete="off" />
+                                <input type="radio" className="btn-check" name="type" id="btnradio3" defaultValue={2} autoComplete="off" />
                                 <label className="btn btn-outline-primary" htmlFor="btnradio3">Estudiante</label>
                             </div>
 
