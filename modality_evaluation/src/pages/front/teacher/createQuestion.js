@@ -1,5 +1,5 @@
-import Header from "../../components/Header";
-import styles from "../../styles/Home.module.css";
+import Header from "../../../components/Header";
+import styles from "../../../styles/Home.module.css";
 
 let state = {
     id: 0,
@@ -153,7 +153,7 @@ let handleSubmit = async e => {
 
     if (result.date === "check") {
         window.alert("Se ha registrado correctamente las preguntas del examen!");
-        window.location.href = "http://localhost:3000/front/test"
+        window.location.href = "http://localhost:3000"
 
     } else if (result.date === "not found") {
         window.alert("No se ha encontrado un examen con el ID que proporcionó");
@@ -198,13 +198,13 @@ export default function questionForm(req, res) {
                                 <input type="radio" className="btn-check" name="correctAsnwer1" id="btnradio1" value="A" autoComplete="off" required />
                                 <label className="btn btn-outline-primary" htmlFor="btnradio1">A</label>
 
-                                <input type="radio" className="btn-check" name="correctAsnwer1" id="btnradio2" value="B" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer1" id="btnradio2" value="B" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio2">B</label>
 
-                                <input type="radio" className="btn-check" name="correctAsnwer1" id="btnradio3" value="C" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer1" id="btnradio3" value="C" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio3">C</label>
 
-                                <input type="radio" className="btn-check" name="correctAsnwer1" id="btnradio4" value="D" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer1" id="btnradio4" value="D" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio4">D</label>
                             </div>
 
@@ -213,35 +213,35 @@ export default function questionForm(req, res) {
 
                         <div className="form2">
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="question2" placeholder="Pregunta" />
+                                <input className={styles.form} name="question2" placeholder="Pregunta" required/>
                             </div>
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="answerA2" placeholder="Respuesta A" />
+                                <input className={styles.form} name="answerA2" placeholder="Respuesta A" required/>
                             </div>
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="answerB2" placeholder="Respuesta B" />
+                                <input className={styles.form} name="answerB2" placeholder="Respuesta B" required/>
                             </div>
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="answerC2" placeholder="Respuesta C" />
+                                <input className={styles.form} name="answerC2" placeholder="Respuesta C" required/>
                             </div>
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="answerD2" placeholder="Respuesta D" />
+                                <input className={styles.form} name="answerD2" placeholder="Respuesta D" required/>
                             </div>
                             <div>
                                 <p>Respuesta correcta</p>
                             </div>
 
                             <div className="btn-group" role="group" aria-label="Basic radio toggle button group" onChange={handleChange}>
-                                <input type="radio" className="btn-check" name="correctAsnwer2" id="btnradio5" value="A" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer2" id="btnradio5" value="A" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio5">A</label>
 
-                                <input type="radio" className="btn-check" name="correctAsnwer2" id="btnradio6" value="B" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer2" id="btnradio6" value="B" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio6">B</label>
 
-                                <input type="radio" className="btn-check" name="correctAsnwer2" id="btnradio7" value="C" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer2" id="btnradio7" value="C" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio7">C</label>
 
-                                <input type="radio" className="btn-check" name="correctAsnwer2" id="btnradio8" value="D" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer2" id="btnradio8" value="D" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio8">D</label>
                             </div>
 
@@ -250,35 +250,35 @@ export default function questionForm(req, res) {
 
                         <div className="form3">
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="question3" placeholder="Pregunta" />
+                                <input className={styles.form} name="question3" placeholder="Pregunta" required/>
                             </div>
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="answerA3" placeholder="Respuesta A" />
+                                <input className={styles.form} name="answerA3" placeholder="Respuesta A" required/>
                             </div>
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="answerB3" placeholder="Respuesta B" />
+                                <input className={styles.form} name="answerB3" placeholder="Respuesta B" required/>
                             </div>
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="answerC3" placeholder="Respuesta C" />
+                                <input className={styles.form} name="answerC3" placeholder="Respuesta C" required/>
                             </div>
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="answerD3" placeholder="Respuesta D" />
+                                <input className={styles.form} name="answerD3" placeholder="Respuesta D" required/>
                             </div>
                             <div>
                                 <p>Respuesta correcta</p>
                             </div>
 
                             <div className="btn-group" role="group" aria-label="Basic radio toggle button group" onChange={handleChange}>
-                                <input type="radio" className="btn-check" name="correctAsnwer3" id="btnradio9" value="A" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer3" id="btnradio9" value="A" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio9">A</label>
 
-                                <input type="radio" className="btn-check" name="correctAsnwer3" id="btnradio10" value="B" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer3" id="btnradio10" value="B" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio10">B</label>
 
-                                <input type="radio" className="btn-check" name="correctAsnwer3" id="btnradio11" value="C" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer3" id="btnradio11" value="C" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio11">C</label>
 
-                                <input type="radio" className="btn-check" name="correctAsnwer3" id="btnradio12" value="D" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer3" id="btnradio12" value="D" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio12">D</label>
                             </div>
 
@@ -288,35 +288,35 @@ export default function questionForm(req, res) {
 
                         <div className="form4">
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="question4" placeholder="Pregunta" />
+                                <input className={styles.form} name="question4" placeholder="Pregunta" required/>
                             </div>
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="answerA4" placeholder="Respuesta A" />
+                                <input className={styles.form} name="answerA4" placeholder="Respuesta A" required/>
                             </div>
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="answerB4" placeholder="Respuesta B" />
+                                <input className={styles.form} name="answerB4" placeholder="Respuesta B" required/>
                             </div>
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="answerC4" placeholder="Respuesta C" />
+                                <input className={styles.form} name="answerC4" placeholder="Respuesta C" required/>
                             </div>
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="answerD4" placeholder="Respuesta D" />
+                                <input className={styles.form} name="answerD4" placeholder="Respuesta D" required/>
                             </div>
                             <div>
                                 <p>Respuesta correcta</p>
                             </div>
 
                             <div className="btn-group" role="group" aria-label="Basic radio toggle button group" onChange={handleChange}>
-                                <input type="radio" className="btn-check" name="correctAsnwer4" id="btnradio13" value="A" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer4" id="btnradio13" value="A" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio13">A</label>
 
-                                <input type="radio" className="btn-check" name="correctAsnwer4" id="btnradio14" value="B" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer4" id="btnradio14" value="B" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio14">B</label>
 
-                                <input type="radio" className="btn-check" name="correctAsnwer4" id="btnradio15" value="C" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer4" id="btnradio15" value="C" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio15">C</label>
 
-                                <input type="radio" className="btn-check" name="correctAsnwer4" id="btnradio16" value="D" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer4" id="btnradio16" value="D" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio16">D</label>
                             </div>
 
@@ -326,35 +326,35 @@ export default function questionForm(req, res) {
 
                         <div className="form5">
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="question5" placeholder="Pregunta" />
+                                <input className={styles.form} name="question5" placeholder="Pregunta" required/>
                             </div>
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="answerA5" placeholder="Respuesta A" />
+                                <input className={styles.form} name="answerA5" placeholder="Respuesta A" required/>
                             </div>
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="answerB5" placeholder="Respuesta B" />
+                                <input className={styles.form} name="answerB5" placeholder="Respuesta B" required/>
                             </div>
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="answerC5" placeholder="Respuesta C" />
+                                <input className={styles.form} name="answerC5" placeholder="Respuesta C" required/>
                             </div>
                             <div className="form-group" onChange={handleChange}>
-                                <input className={styles.form} name="answerD5" placeholder="Respuesta D" />
+                                <input className={styles.form} name="answerD5" placeholder="Respuesta D" required/>
                             </div>
                             <div>
                                 <p>Respuesta correcta</p>
                             </div>
 
                             <div className="btn-group" role="group" aria-label="Basic radio toggle button group" onChange={handleChange}>
-                                <input type="radio" className="btn-check" name="correctAsnwer5" id="btnradio17" value="A" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer5" id="btnradio17" value="A" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio17">A</label>
 
-                                <input type="radio" className="btn-check" name="correctAsnwer5" id="btnradio18" value="B" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer5" id="btnradio18" value="B" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio18">B</label>
 
-                                <input type="radio" className="btn-check" name="correctAsnwer5" id="btnradio19" value="C" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer5" id="btnradio19" value="C" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio19">C</label>
 
-                                <input type="radio" className="btn-check" name="correctAsnwer5" id="btnradio20" value="D" autoComplete="off" />
+                                <input type="radio" className="btn-check" name="correctAsnwer5" id="btnradio20" value="D" autoComplete="off" required/>
                                 <label className="btn btn-outline-primary" htmlFor="btnradio20">D</label>
                             </div>
 

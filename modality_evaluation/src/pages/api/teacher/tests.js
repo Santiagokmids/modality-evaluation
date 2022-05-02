@@ -1,4 +1,4 @@
-import db from '../../../util/tests'; 
+import db from "../../../util/tests"; 
 
 export default async function handler(req,res){
     

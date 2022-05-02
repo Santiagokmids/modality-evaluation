@@ -1,5 +1,5 @@
-import Header from '../../components/Header';
-import styles from '../../styles/Home.module.css';
+import Header from '../../../components/Header';
+import styles from '../../../styles/Home.module.css';
 
 let router = "";
 let number = "1";
@@ -22,10 +22,12 @@ let handleChange = async e => {
 
         if (route[i].indexOf("-") > -1) {
             txt = route[i].split("-");
+            state.question = txt[1];
+
+        }else{
+            state.question = number;
         }
     }
-
-    state.question = txt[1];
 }
 
 let handleSubmit = async e => {
@@ -48,6 +50,7 @@ let handleSubmit = async e => {
         window.alert("Respuesta guardada de forma correcta");
 
     } else if (result.date === "finish") {
+
         window.alert("Ha terminado el examen");
 
         let id = window.location.pathname;
@@ -79,6 +82,7 @@ let handleSubmit = async e => {
 
         if (result.date != "fail") {
             window.alert("Su puntaje en este examen ha sido de: "+result.result);
+            window.location.href = "http://localhost:3000"
         }
     }
 }
@@ -186,12 +190,12 @@ test.getInitialProps = async ({ asPath }) => {
     }
 
     if (!verify) {
-        r = await fetch("http://localhost:3000/api/teacher/questions/" + rute[2], object);
-        router = "http://localhost:3000/front/" + rute[2];
+        r = await fetch("http://localhost:3000/api/teacher/questions/" + rute[3], object);
+        router = "http://localhost:3000/front/student/" + rute[3];
 
     } else {
         r = await fetch("http://localhost:3000/api/teacher/questions/" + text[0], object);
-        router = "http://localhost:3000/front/" + text[0];
+        router = "http://localhost:3000/front/student/" + text[0];
     }
 
     const questions = await r.json();

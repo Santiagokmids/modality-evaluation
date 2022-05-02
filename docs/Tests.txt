@@ -1,0 +1,9 @@
+CREATE TABLE TESTS(
+	TITLE VARCHAR(200),
+	DESCRIPTION VARCHAR(500),
+	ID INTEGER,
+	ACCESS INTEGER
+);
+
+INSERT INTO TESTS VALUES('Examen Discretas','Este es el tercer examen de discretas',1234,210);
+INSERT INTO TESTS VALUES('Proyecto integrador','Este es el primer examen de proyecto integrador',9876,113);

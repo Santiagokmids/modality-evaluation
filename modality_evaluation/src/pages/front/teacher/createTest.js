@@ -1,4 +1,4 @@
-import Header from "../../components/Header";
+import Header from "../../../components/Header";
 
 let test = {
     title: "",
@@ -46,7 +46,7 @@ let handleSubmit = async e => {
 
     if(result.date === "check"){
         window.alert("Se ha creado correctamente el examen");
-        window.location.href = "http://localhost:3000/front/createQuestion"
+        window.location.href = "http://localhost:3000/front/teacher/createQuestion"
 
     } else if(result.date === "found"){
         window.alert("Ya existe un examen con ese código de identificación");
