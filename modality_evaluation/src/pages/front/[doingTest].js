@@ -11,13 +11,21 @@ let state = {
 
 let handleChange = async e => {
 
-    if (e.target.name === "answer1") {
-        state.answer = e.target.value;
+    state.answer = e.target.value;
 
-    } else {
-        state.question = number;
+    let id = window.location.pathname;
+
+    let route = id.split("/");
+    let txt = "";
+
+    for (let i = 0; i < route.length; i++) {
+
+        if (route[i].indexOf("-") > -1) {
+            txt = route[i].split("-");
+        }
     }
 
+    state.question = txt[1];
 }
 
 let handleSubmit = async e => {
@@ -37,7 +45,41 @@ let handleSubmit = async e => {
     const result = await r.json();
 
     if (result.date === "check") {
-        window.alert("Respuesta guardada de forma correcta")
+        window.alert("Respuesta guardada de forma correcta");
+
+    } else if (result.date === "finish") {
+        window.alert("Ha terminado el examen");
+
+        let id = window.location.pathname;
+
+        let route = id.split("/");
+        let txt = "";
+
+        for (let i = 0; i < route.length; i++) {
+
+            if (route[i].indexOf("-") > -1) {
+                txt = route[i].split("-");
+            }
+        }
+
+        id = txt[0];
+
+        let object = {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(id)
+        }
+
+        let r = await fetch("http://localhost:3000/api/student/calculateResult", object);
+
+        let result = await r.json()
+
+        if (result.date != "fail") {
+            window.alert("Su puntaje en este examen ha sido de: "+result.result);
+        }
     }
 }
 
@@ -59,7 +101,7 @@ export default function test({ title }) {
                         </div>
                     </div>
                     <div style={{ textAlign: "center" }}>
-                        <button type='submit' className="btn btn-primary" style={{ marginTop: "30px", marginLeft: "10px" }}> Guardar respuesta y continuar </button>
+                        <button type='submit' className="btn btn-primary" style={{ marginTop: "30px", marginLeft: "10px" }}> Guardar respuesta</button>
                     </div><br />
                 </form>
             </div>

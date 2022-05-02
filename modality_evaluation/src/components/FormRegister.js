@@ -19,7 +19,7 @@ export default class Form extends Component {
 
     handleSubmit = async e => {
 
-        if (state.password === state.password2) {
+        if (this.state.password === this.state.password2) {
 
             e.preventDefault();
             let object = {
@@ -28,7 +28,7 @@ export default class Form extends Component {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(state)
+                body: JSON.stringify(this.state)
             }
 
             let r = await fetch("http://localhost:3000/api/student/insertIntoDatabase", object);
@@ -70,11 +70,11 @@ export default class Form extends Component {
                             <label htmlFor="exampleInputPassword1" className="form-label">Yo soy un...</label>
                             <br></br>
                             <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                <input type="radio" className="btn-check" name="profesion" id="btnradio1" value={1}/>
+                                <input type="radio" className="btn-check" name="type" id="btnradio1" value={1}/>
 
                                 <label className="btn btn-outline-primary" htmlFor="btnradio1">Profesor</label>
 
-                                <input type="radio" className="btn-check" name="profesion" id="btnradio3" value={2} />
+                                <input type="radio" className="btn-check" name="type" id="btnradio3" value={2} />
                                 
                                 <label className="btn btn-outline-primary" htmlFor="btnradio3">Estudiante</label>
                             </div>
